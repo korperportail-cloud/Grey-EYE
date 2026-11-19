@@ -1,0 +1,18 @@
+CRÉER L'APK (sans rien installer sur le PC)
+
+1. Créez un compte gratuit sur github.com, puis un nouveau dépôt (ex. decodeur-gray).
+2. Envoyez-y tout le contenu de ce dossier, y compris le dossier caché .github :
+     git init
+     git add .
+     git commit -m "init"
+     git branch -M main
+     git remote add origin https://github.com/VOTRE_NOM/decodeur-gray.git
+     git push -u origin main
+3. Onglet « Actions » du dépôt : le workflow « Build APK » se lance (3 à 6 min).
+4. Une fois terminé, ouvrez l'exécution et téléchargez l'artefact « decodeur-gray-apk » (zip contenant app-debug.apk).
+5. Copiez app-debug.apk sur le téléphone, ouvrez-le et autorisez
+   « Installer des applications inconnues ». Au premier lancement, acceptez la caméra.
+
+Modifier l'appli : éditez www/index.html puis poussez de nouveau (git push) : un nouvel APK est généré.
+Test sur PC avant installation : dans le dossier www, lancez « py -m http.server 8000 »
+puis ouvrez http://localhost:8000 dans Chrome.
